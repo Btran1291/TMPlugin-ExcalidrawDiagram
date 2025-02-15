@@ -17,9 +17,28 @@ async function render_excalidraw(params, userSettings) {
 <html>
 <head>
   <title>Excalidraw with Mermaid</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .excalidraw-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      position: relative;
+    }
+        #app{
+          width: 100%;
+            height: 100%;
+        }
+  </style>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app" class="excalidraw-wrapper"></div>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.production.min.js"></script>
@@ -66,11 +85,9 @@ async function render_excalidraw(params, userSettings) {
           React.Fragment,
           null,
           React.createElement(
-            "div",
-            { style: { height: "500px" } },
-            React.createElement(ExcalidrawLib.Excalidraw, {
+            ExcalidrawLib.Excalidraw, {
               initialData: { elements: result.elements, files: result.files },
-            })
+            }
           )
         );
       };

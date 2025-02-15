@@ -5,7 +5,7 @@
     "title": "Excalidraw Diagram",
     "openaiSpec": {
         "name": "render_excalidraw",
-        "description": "Generates an Excalidraw diagram from Mermaid syntax, allowing for style customizations. Supports flowcharts. Other diagram types render as images.",
+        "description": "Generates Excalidraw diagrams from Mermaid syntax, allowing for style customizations. Mermaid diagram syntax will be generated based on the user's query. Supports flowcharts. Other diagram types render as images.",
         "parameters": {
             "type": "object",
             "properties": {
